@@ -65,4 +65,4 @@ Das `.terraform/` Verzeichnis, `*.tfstate` Dateien und die `*.tfvars` wurden zur
 
 ---
 
-![alt text](<Screenshot (4034).png>) ![alt text](<Screenshot (4029).png>) ![alt text](<Screenshot (4030).png>) ![alt text](<Screenshot (4031).png>) ![alt text](<Screenshot (4032).png>) ![alt text](<Screenshot (4033).png>)
+(<Screenshot 2025-06-03 205651.png>) (<Screenshot 2025-06-03 205704.png>) (<Screenshot 2025-06-03 205719.png>) (<Screenshot 2025-06-03 205730.png>) (<Screenshot 2025-06-03 205740.png>) (<Screenshot 2025-06-03 205754.png>)
