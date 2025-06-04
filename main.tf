@@ -1,18 +1,25 @@
 # main.tf
 
-resource "docker_image" "nginx_image" {
-  name         = "nginx:latest" # Lädt das 'nginx:latest' Image von Docker Hub
-  keep_locally = false         # Optional: Entfernt das Image lokal, wenn die Ressource zerstört wird
-}
+# Die docker_image Ressource wurde ja gelöscht, falls du das schon gemacht hast.
+# Falls nicht, hier wäre sie vorher gewesen.
 
 resource "docker_container" "simple_nginx_container" {
-  name  = "my-nginx-container-tf" # Name des Docker Containers, der erstellt wird
-  image = docker_image.nginx_image.image_id # Referenziert das oben definierte Image über seine ID
+  name  = var.container_name       # Nutzt die Variable
+  image = "nginx:latest"           # Image direkt hier angeben
 
   ports {
-    internal = 80 # Interner Port des Containers (Nginx lauscht auf Port 80)
-    # external = 8080 # Optional: Mappt den internen Port auf einen externen Host-Port
-                     # Für diesen ersten Test können wir das weglassen, um Komplexität zu reduzieren.
-                     # Wenn du es testen willst, stelle sicher, dass Port 8080 frei ist.
+    internal = 80
+    external = var.external_port   # Nutzt die Variable
   }
+
+provisioner "local-exec" {
+  interpreter = ["bash", "-c"]
+  command     = "docker exec ${self.name} sh -c 'echo \"${var.nginx_html_content}\" > /usr/share/nginx/html/index.html'"
 }
+    # Optional: Bessere Fehlerbehandlung oder Ausführungsumgebung für den Provisioner
+    # interpreter = ["bash", "-c"] # Kann manchmal helfen, je nach Komplexität des Befehls
+    # environment = {
+    #   MY_VAR = "some_value"
+    # }
+    # when = create # Ist der Default, wenn nicht anders angegeben
+  }
