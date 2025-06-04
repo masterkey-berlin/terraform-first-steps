@@ -108,25 +108,3 @@ terraform apply -var-file="test.tfvars"
 
 terraform destroy -var-file="test.tfvars"
 
-![alt text](./<Screenshot 2025-06-04 135559 - Kopie-2.png>)
-
-![alt text](./<Screenshot 2025-06-04 135003 - Kopie.png>)
-![alt text](./<Screenshot 2025-06-04 135015 - Kopie-1.png>)
-![alt text](./<Screenshot 2025-06-04 135123 - Kopie-1.png>)
-![alt text](./<Screenshot 2025-06-04 135133 - Kopie-1.png>)
-![alt text](./<Screenshot 2025-06-04 135242 - Kopie-1.png>)
-![alt text](./<Screenshot 2025-06-04 135255 - Kopie-1.png>)
-![alt text](./<Screenshot 2025-06-04 135307 - Kopie-1.png>)
-![alt text](./<Screenshot 2025-06-04 135455 - Kopie-1.png>)
-![alt text](./<Screenshot 2025-06-04 143834 - Kopie-1.png>)
-![alt text](./<Screenshot 2025-06-04 143841 - Kopie-1.png>)
-![alt text](./<Screenshot 2025-06-04 143856 - Kopie-1.png>)
-![alt text](./<Screenshot 2025-06-04 143856-1.png>)
-![alt text](./<Screenshot 2025-06-04 144032 - Kopie-1.png>)
-![alt text](./<Screenshot 2025-06-04 144111 - Kopie-1.png>)
-![alt text](./<Screenshot 2025-06-04 144213 - Kopie-1.png>)
-![alt text](./<Screenshot 2025-06-04 144233 - Kopie-1.png>)
-![alt text](./<Screenshot 2025-06-04 144520 - Kopie-1.png>)
-![alt text](./<Screenshot 2025-06-04 144528 - Kopie-1.png>)
-![alt text](./<Screenshot 2025-06-04 145044-1.png>)
-![alt text](./<Screenshot 2025-06-04 145100-1.png>)
