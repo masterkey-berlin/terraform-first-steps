@@ -66,3 +66,46 @@ Das `.terraform/` Verzeichnis, `*.tfstate` Dateien und die `*.tfvars` wurden zur
 ---
 
 (<Screenshot 2025-06-03 205651.png>) (<Screenshot 2025-06-03 205704.png>) (<Screenshot 2025-06-03 205719.png>) (<Screenshot 2025-06-03 205730.png>) (<Screenshot 2025-06-03 205740.png>) (<Screenshot 2025-06-03 205754.png>)
+
+
+# Terraform: Variablen, Outputs und Provisioner
+
+Dieses Projekt erweitert die initiale Terraform-Konfiguration um Variablen, Outputs und einen Provisioner, um einen Docker Nginx Container dynamischer zu gestalten und zu konfigurieren.
+
+## Aufgabe
+
+Ziel dieser Aufgabe war es:
+- Input-Variablen (`variables.tf`) mit Default-Werten zu definieren.
+- Output-Werte (`outputs.tf`) zu definieren, um wichtige Informationen anzuzeigen.
+- Die `main.tf` zu aktualisieren, um diese Variablen zu nutzen und die `docker_image` Ressource zu entfernen.
+- Einen `local-exec` Provisioner zu verwenden, um dynamischen HTML-Inhalt in den laufenden Nginx-Container zu schreiben.
+- Verschiedene Methoden zur Übergabe von Variablenwerten zu demonstrieren (`.tfvars`-Datei, Kommandozeilen-Flags, Default-Werte).
+- Den vollständigen Terraform-Workflow (`init`, `plan`, `apply`, `destroy`) mit diesen Erweiterungen durchzuführen.
+
+## Terraform-Dateien
+
+Die Terraform-Konfigurationsdateien (`provider.tf`, `main.tf`, `variables.tf`, `outputs.tf`, `test.tfvars`) für diese Aufgabe befinden sich im Verzeichnis:
+`terraform/first-steps/`
+
+## Durchführung & Workflow
+
+### 1. Vorbereitung
+- Sicherstellen, dass Terraform CLI und Docker installiert sind und laufen.
+- Arbeitsverzeichnis: `terraform/first-steps/`
+
+### 2. Initialer Apply (Falls nicht aus vorheriger Aufgabe geschehen)
+   ```bash
+   terraform apply
+
+   terraform init
+
+   terraform plan -var-file="test.tfvars"
+terraform apply -var-file="test.tfvars"
+
+terraform apply -var-file="test.tfvars" -var="container_name=my-cli-container"
+
+terraform apply -var-file="test.tfvars"
+
+terraform destroy -var-file="test.tfvars"
+
+![alt text](<Screenshot 2025-06-04 135015 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 135015.png>) ![alt text](<Screenshot 2025-06-04 135123 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 135123.png>) ![alt text](<Screenshot 2025-06-04 135133 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 135133.png>) ![alt text](<Screenshot 2025-06-04 135242 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 135242.png>) ![alt text](<Screenshot 2025-06-04 135255 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 135255.png>) ![alt text](<Screenshot 2025-06-04 135307 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 135307.png>) ![alt text](<Screenshot 2025-06-04 135455 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 135455.png>) ![alt text](<Screenshot 2025-06-04 135559 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 135559.png>) ![alt text](<Screenshot 2025-06-04 142318 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 142318.png>) ![alt text](<Screenshot 2025-06-04 143822 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 143822.png>) ![alt text](<Screenshot 2025-06-04 143828 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 143828.png>) ![alt text](<Screenshot 2025-06-04 143834 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 143834.png>) ![alt text](<Screenshot 2025-06-04 143841 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 143841.png>) ![alt text](<Screenshot 2025-06-04 143856 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 143856.png>) ![alt text](<Screenshot 2025-06-04 144032 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 144032.png>) ![alt text](<Screenshot 2025-06-04 144111 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 144111.png>) ![alt text](<Screenshot 2025-06-04 144205 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 144205.png>) ![alt text](<Screenshot 2025-06-04 144213 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 144213.png>) ![alt text](<Screenshot 2025-06-04 144233 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 144233.png>) ![alt text](<Screenshot 2025-06-04 144520 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 144520.png>) ![alt text](<Screenshot 2025-06-04 144528 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 144528.png>) ![alt text](<Screenshot 2025-06-04 144606 - Kopie.png>) ![alt text](<Screenshot 2025-06-04 144606.png>) ![alt text](<Screenshot 2025-06-04 145044.png>) ![alt text](<Screenshot 2025-06-04 145100.png>)
